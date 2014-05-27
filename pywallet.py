@@ -1228,7 +1228,7 @@ def PrivKeyToSecret(privkey):
 def SecretToASecret(secret, compressed=False):
 	prefix = chr((addrtype+128)&255)
 	if addrtype==48:  #assuming Litecoin
-		prefix = chr(128)
+		prefix = chr(176)
 	vchIn = prefix + secret
 	if compressed: vchIn += '\01'
 	return EncodeBase58Check(vchIn)
